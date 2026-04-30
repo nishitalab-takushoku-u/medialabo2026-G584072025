@@ -5,6 +5,10 @@ p {
 p.info {
 	font-size: small;
 	background-color: #dfdfdf;
+	display: grid;
+}
+p.target {
+	padding : 30px;
 }
 
 h1 {
@@ -20,6 +24,9 @@ div#zentai {
 	display: flex;
 	flex-direction: row;
 	width: 1024px;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	grid-template-rows: 200px;
 }
 
 div#zentai > div {

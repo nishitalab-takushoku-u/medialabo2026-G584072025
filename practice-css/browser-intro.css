@@ -3,7 +3,8 @@ p {
 }
 
 p.info {
-	font-size: 10pt;
+	font-size: small;
+	background-color: #dfdfdf;
 }
 
 h1 {
@@ -24,7 +25,4 @@ div#zentai {
 div#zentai > div {
 	margin-left: 5px;
 	background-color: #ffefaf;
-}
-body {
-	background-color: #dfdfdf;;
 }

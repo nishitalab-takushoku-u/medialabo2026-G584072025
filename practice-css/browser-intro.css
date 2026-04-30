@@ -11,7 +11,6 @@ p.target {
 }
 
 h1 {
-	background-color: #7f7fcf;
 	color: white;
 	text-shadow: 2px 2px 4px navy;
 }
@@ -20,7 +19,7 @@ h2 {
 	border: none;
 	margin: 5px;
 	font-family: cursive;
-	color: #3f3faf;
+	color: #3f3f3f;
 	background: linear-gradient(white,#ffefaf);
 }
 

@@ -5,7 +5,6 @@ p {
 p.info {
 	font-size: small;
 	background-color: #dfdfdf;
-	display: grid;
 }
 p.target {
 	padding : 30px;
@@ -13,23 +12,30 @@ p.target {
 
 h1 {
 	background-color: #7f7fcf;
+	color: white;
+	text-shadow: 2px 2px 4px navy;
 }
 
 h2 {
 	border: solid 1px black;
 	margin: 5px;
+	font-family: cursive;
+	color: #3f3faf;
+	background: linear-gradient(white,#ffefaf);
 }
 
 div#zentai {
-	display: flex;
+	
+	display: grid;
 	flex-direction: row;
 	width: 1024px;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 10px;
-	grid-template-rows: 200px;
 }
 
 div#zentai > div {
-	margin-left: 5px;
+	padding: 5px;
 	background-color: #ffefaf;
+	grid-template-rows: 200px;
+	height: 200px;
 }

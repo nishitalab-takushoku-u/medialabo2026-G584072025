@@ -81,3 +81,11 @@ div#zentai > div:hover {
     transition: 0.3s; 
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
+#container {
+    max-width: 900px;          
+    margin: 40px auto;         
+    padding: 40px;             
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;  
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}

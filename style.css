@@ -20,6 +20,10 @@ body {
     line-height: 1.8;          
     color: #333;              
     background-color: #f8f9fa; 
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+    background-attachment: fixed; 
+    line-height: 1.8;            
+    color: #333;                 
 }
 #main-content { 
     max-width: 900px;
@@ -28,13 +32,22 @@ body {
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
 }
+
 h2 {
     border-left: 6px solid #4fc3f7; 
     padding-left: 15px;
     margin-top: 40px;
-    color: #0277bd;
+    color: #3f3faf;
     font-size: 1.5rem;
+    font-family: "Times New Roman", "Georgia", cursive;
+    font-style: italic; 
+    background: linear-gradient(to right, #ffffff, #ffefaf); 
+    padding: 8px 20px;
+    border-radius: 8px; 
+    display: inline-block;
+    margin-top: 25px;
 }
+
 a {
     color: #039be5;
     text-decoration: none;
@@ -45,6 +58,7 @@ a:hover {
     color: #ffb300;          
     text-decoration: underline;
 }
+
 section {
     background: #fff;
     border: 1px solid #eee;
@@ -56,4 +70,14 @@ section {
 
 section:hover {
     transform: translateY(-5px); 
+}
+
+div#zentai > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+div#zentai > div:hover {
+    transform: translateY(-8px) scale(1.02);
+    transition: 0.3s; 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }

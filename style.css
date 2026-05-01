@@ -137,4 +137,5 @@ h3 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    filter: drop-shadow(1px 0 0 #ffefaf) drop-shadow(-1px 0 0 #ffefaf) drop-shadow(0 1px 0 #ffefaf) drop-shadow(0 -1px 0 #ffefaf);
 }

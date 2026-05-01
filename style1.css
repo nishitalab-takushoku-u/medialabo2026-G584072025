@@ -190,7 +190,7 @@ body {
   height: 50px;
   top: 20px;
   left: -100px;
-  animation: moveCloud 5s linear infinite;
+  animation: moveCloud 6s linear infinite;
 }
 
 .cloud2 {

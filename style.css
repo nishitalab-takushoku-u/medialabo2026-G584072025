@@ -1,5 +1,59 @@
 h1 {
     text-align: center;
-    color: lightblue;
+    color: #e0f2f1;
+    font-size: 3rem;
     border-bottom-style: groove;
+    font-weight: 900; 
+    margin: 40px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;   
+    text-shadow: 
+        1px 1px 0px #b0bec5,
+        2px 2px 0px #90a4ae,
+        3px 3px 0px #78909c,
+        4px 4px 0px #546e7a,
+        5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+body {
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+    line-height: 1.8;          
+    color: #333;              
+    background-color: #f8f9fa; 
+}
+#main-content { 
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+h2 {
+    border-left: 6px solid #4fc3f7; 
+    padding-left: 15px;
+    margin-top: 40px;
+    color: #0277bd;
+    font-size: 1.5rem;
+}
+a {
+    color: #039be5;
+    text-decoration: none;
+    transition: all 0.3s ease; 
+}
+
+a:hover {
+    color: #ffb300;          
+    text-decoration: underline;
+}
+section {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+section:hover {
+    transform: translateY(-5px); 
 }

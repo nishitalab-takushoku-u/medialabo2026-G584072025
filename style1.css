@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Hiragino Sans", Arial, sans-serif;
   text-align: center;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -60,19 +61,6 @@ body::before {
   width: 200px;
   border-radius: 20px;
   border: none;
-}
-
-.card {
-  width: 300px;
-  margin: 100px auto;
-  padding: 20px;
-  border-radius: 25px;
-  text-align: center;
-
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .temp {
@@ -134,9 +122,6 @@ body::before {
 
 .city:hover .icon {
   transform: scale(1.3);
-}
-body {
-  font-family: "Hiragino Sans", "Arial";
 }
 
 .sun {
@@ -211,7 +196,8 @@ body {
   box-shadow:
     20px 10px 0 0 white,
     40px 0px 0 0 white,
-    60px 10px 0 0 white;
+    60px 10px 0 0 white,
+    0 5px 10px rgba(0,0,0,0.1);
 }
 
 .cloud1 {
@@ -230,30 +216,9 @@ body {
   animation: moveCloud 12s linear infinite;
 }
 
-.cloud {
-  box-shadow:
-    20px 10px 0 0 white,
-    40px 0px 0 0 white,
-    60px 10px 0 0 white,
-    0 5px 10px rgba(0,0,0,0.1);
-}
-
 @keyframes moveCloud {
-  from {
-    left: -150px;
-  }
-  to {
-    left: 110%;
-  }
-}
-
-@keyframes moveCloud {
-  0% {
-    left: -150px;
-  }
-  100% {
-    left: 110%;
-  }
+  from { left: -150px; }
+  to { left: 110%; }
 }
 
 .bg-tokyo {
@@ -299,10 +264,15 @@ body {
 }
 
 .card {
-  background: rgba(200, 200, 200, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
+  width: 300px;
+  margin: 100px auto;
   padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }

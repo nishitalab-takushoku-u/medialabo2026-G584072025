@@ -299,7 +299,7 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(200, 200, 200, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;

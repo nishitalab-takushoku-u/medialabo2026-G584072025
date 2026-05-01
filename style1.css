@@ -128,27 +128,28 @@ body {
 body {
   font-family: "Hiragino Sans", "Arial";
 }
+
 .sun {
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255,255,200,0.8), transparent);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #fff799, transparent);
   border-radius: 50%;
-  top: -30px;
-  right: -30px;
-  animation: glow 3s infinite alternate;
+  top: 10px;
+  right: 10px;
+  animation: glow 2s infinite alternate;
+  z-index: 2;
 }
 
 @keyframes glow {
   from {
     transform: scale(1);
-    opacity: 0.7;
   }
   to {
     transform: scale(1.2);
-    opacity: 1;
   }
 }
+
 .rain {
   position: absolute;
   width: 100%;
@@ -176,11 +177,12 @@ body {
   from { top: -20px; }
   to { top: 100%; }
 }
+
 .cloud {
   position: absolute;
   background: white;
   border-radius: 50%;
-  opacity: 0.8;
+  z-index: 2;
 }
 
 .cloud1 {
@@ -188,7 +190,7 @@ body {
   height: 50px;
   top: 20px;
   left: -100px;
-  animation: moveCloud 20s linear infinite;
+  animation: moveCloud 15s linear infinite;
 }
 
 .cloud2 {
@@ -196,13 +198,19 @@ body {
   height: 40px;
   top: 80px;
   left: -120px;
-  animation: moveCloud 25s linear infinite;
+  animation: moveCloud 20s linear infinite;
 }
 
 @keyframes moveCloud {
-  from { left: -150px; }
-  to { left: 110%; }
+  from {
+    left: -150px;
+  }
+  to {
+    left: 110%;
+  }
 }
+
+
 .card {
   position: relative;
   overflow: hidden;

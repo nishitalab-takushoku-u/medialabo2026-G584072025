@@ -110,18 +110,37 @@ section:hover {
 }
 
 h3 {
-    font-family: "Times New Roman", serif; 
-    font-size: 1.2rem;                     
-    color: #3f3faf;                       
+    font-family: "Times New Roman", serif;
+    font-size: 1.2rem;
+    color: #3f3faf;
     display: flex;
-    align-items: center;                  
-    padding: 5px 10px;
+    align-items: center;  
     margin-top: 25px;
     margin-bottom: 10px;
-    border-left: 4px solid #885492;
-    border-bottom: 1px solid #ffefaf;      
-    background-color: transparent;        
+    padding-bottom: 5px;
+    border-left: none; 
+    border-bottom: 1px solid #ffefaf;
 }
+
+h3::before {
+    content: '';          
+    display: inline-block;
+    width: 10px;         
+    height: 10px;
+    background-color: #3f3faf; 
+    border-radius: 50%;   
+    margin-right: 12px;   
+    box-shadow: 0 0 0 3px #ffefaf;
+}
+
+
+h3:hover::before {
+    transform: scale(1.3);
+    background-color: #ffefaf; 
+    box-shadow: 0 0 0 3px #3f3faf; 
+    transition: all 0.3s ease;
+}
+
 
 section p {
     margin-left: 14px;      

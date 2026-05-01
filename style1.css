@@ -96,3 +96,35 @@ body {
   font-size: 13px;
   color: #666;
 }
+
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px;
+}
+
+.city {
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  width: 80px;
+}
+
+.icon {
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.name {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.city:hover .icon {
+  transform: scale(1.3);
+}
+body {
+  font-family: "Hiragino Sans", "Arial";
+}

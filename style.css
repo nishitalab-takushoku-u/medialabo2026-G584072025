@@ -48,6 +48,7 @@ h2 {
     margin-top: 25px;
 }
 
+
 a {
     color: #039be5;
     text-decoration: none;
@@ -88,4 +89,42 @@ div#zentai > div:hover {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;  
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+p {
+    line-height: 1.8;      
+    letter-spacing: 0.5px;    
+    color: #4b5563;           
+    margin-bottom: 15px;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #d1d5db; 
+    transition: background-color 0.3s ease;
+}
+
+section:hover {
+    background-color: rgba(255, 239, 175, 0.1); 
+}
+
+h3 {
+    font-family: "Times New Roman", serif; 
+    font-size: 1.2rem;                     
+    color: #3f3faf;                       
+    display: flex;
+    align-items: center;                  
+    padding: 5px 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-left: 4px solid #3f3faf;
+    border-bottom: 1px solid #ffefaf;      
+    background-color: transparent;        
+}
+
+section p {
+    margin-left: 14px;      
+    line-height: 1.8;      
+    color: #555;            
 }

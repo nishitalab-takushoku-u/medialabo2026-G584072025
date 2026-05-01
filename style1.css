@@ -3,6 +3,16 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  z-index: -1;
+}
 
 .bg-main {
   background: linear-gradient(to top right, #ffd6e0, #cce7ff);
@@ -247,6 +257,47 @@ body {
 }
 
 .card {
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7); 
+}
+
+.bg-tokyo {
+  background-image: url("tokyo.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.bg-paris {
+  background-image: url("bali.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.bg-rome {
+  background-image: url("rome.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.bg-ny {
+  background-image: url("new.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.bg-barcelona {
+  background-image: url("basai.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.bg-maldives {
+  background-image: url("madai.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }

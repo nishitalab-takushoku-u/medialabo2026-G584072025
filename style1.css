@@ -196,7 +196,7 @@ body::before {
   width: 120px;
   height: 200px;
 
-  animation: lightningFlash 5s infinite;
+  animation: lightningFlash 3s infinite;
 
   opacity: 0;
 

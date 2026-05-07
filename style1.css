@@ -188,23 +188,40 @@ body::before {
   to { top: 100%; }
 }
 
-.lightning-box {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #fff;
-  border-radius: 8px;
-  background-color: #333;
-  animation: flash 0.2s infinite alternate;
+.lightning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255,255,255,0.4);
+
+  opacity: 0;
+
+  animation: lightning 6s infinite;
+  pointer-events: none;
 }
 
-@keyframes flash {
-  from {
-    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #22d3ee;
-    opacity: 1;
+@keyframes lightning {
+  0%, 85%, 100% {
+    opacity: 0;
   }
-  to {
-    box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #22d3ee;
+
+  86% {
     opacity: 0.8;
+  }
+
+  87% {
+    opacity: 0;
+  }
+
+  88% {
+    opacity: 0.5;
+  }
+
+  89% {
+    opacity: 0;
   }
 }
 

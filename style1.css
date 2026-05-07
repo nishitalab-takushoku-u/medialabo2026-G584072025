@@ -211,7 +211,7 @@ body::before {
 
   opacity: 0;
 
-  animation: flash 5s infinite;
+  animation: flash 2s infinite;
 
   filter: drop-shadow(0 0 10px yellow);
 

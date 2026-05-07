@@ -10,6 +10,7 @@ function print(data) {
   console.log("湿度: " + data.main.humidity + "%");
   console.log("風速: " + data.wind.speed + "m/s");
   console.log("風向: " + data.wind.deg + "度");
+  
 }
 
 

@@ -1,5 +1,5 @@
 x = document.querySelector('button#calc');
-x.addEventListener('click', add);
+x.addEventListener('click', calc);
 
 function add(){
     let a = document.querySelector('input[name="left"]');

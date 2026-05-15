@@ -1,5 +1,4 @@
-let button =
-  document.getElementById("sou");
+let button = document.getElementById("sou");
 
 button.addEventListener("click", GS);
 

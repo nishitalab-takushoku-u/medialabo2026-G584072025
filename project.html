@@ -5,14 +5,26 @@
     <meta charset="utf-8">
     <title>天気の JavaScript</title>
     <script src="practice-html/weather.js" defer></script>
-
+    <script src="project.js" defer></script>
     <meta charset="utf-8">
     <title>世界の天気</title>
     <link rel="stylesheet" href="style1.css">
   </head>
     <body class="bg-main">
 <h1>世界の天気</h1>
-<h2 class="title">都市を選んでください 🌸</h2>
+<div class="search-box">
+
+  <label for="city">
+    都市を検索してください
+  </label>
+
+  <input type="text" id="city">
+
+  <button id="sou()">
+    検索
+  </button>
+
+</div>
 
 <div class="map">
   <img src="worldmap.png">

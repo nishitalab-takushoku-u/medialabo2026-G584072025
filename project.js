@@ -1,4 +1,9 @@
-function sou() {
+let button =
+  document.getElementById("sou");
+
+button.addEventListener("click", GS);
+
+function GS() {
 
   let city =
     document.getElementById("city").value;

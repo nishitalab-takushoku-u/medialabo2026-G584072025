@@ -25,18 +25,29 @@ function hantei() {
   
   // ここから: 正解判定する
   // 　　　　  正解/不正解のときのメッセージを表示する
- let pResult = document.querySelector('p#result');
-    if (yoso === kotae) {
-        pResult.textContent = "正解です。おめでとう！";
-    } else {
-        if (kaisu >= 3) {
-            pResult.textContent = "まちがい。残念でした答えは " + kotae + " です。";
-        } else if (yoso < kotae) {
-            pResult.textContent = "まちがい。答えはもっと大きいですよ";
-        } else {
-            pResult.textContent = "まちがい。答えはもっと小さいですよ";
-        }
-    }
+  let pResult = document.querySelector('p#result');
+  let spanAnswer = document.querySelector('span#answer'); 
+  spanAnswer.textContent = yoso; 
+  if (kaisu >= 4) {
+      pResult.textContent = "答えは " + kotae + " でした。すでにゲームは終わっています";
+  } 
+  
+  else if (yoso === kotae) {
+      pResult.textContent = "正解です。おめでとう！";
+      kaisu = 3; 
+  } 
+  
+  else if (kaisu === 3) {
+      pResult.textContent = "まちがい。残念でした。答えは " + kotae + " です。";
+  } 
+  
+  else {
+      if (yoso < kotae) {
+          pResult.textContent = "まちがい。答えはもっと大きいですよ";
+      } else {
+          pResult.textContent = "まちがい。答えはもっと小さいですよ";
+      }
+  }
   // ここまで: 正解判定する
 }
 

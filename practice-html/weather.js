@@ -19,7 +19,8 @@ function print(data) {
 function printDom(data) {
 let d = document. createElement('div');
 d. setAttribute('id', 'result') ;
-console.log("--- 検索結果 ---");
+d.textContent = 
+  console.log("--- 検索結果 ---");
   console.log("都市名: " + data.name);
   console.log("緯度: " + data.coord.lat + ", 経度: " + data.coord.lon);
   console.log("天气: " + data.weather[0].description);

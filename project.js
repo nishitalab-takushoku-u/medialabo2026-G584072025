@@ -1,6 +1,5 @@
-let button = document.getElementById("sou");
-
-button.addEventListener("click", GS);
+let b = document.querySelector('button#sou');
+b.addEventListener('click', GS);
 
 function GS() {
 
@@ -10,23 +9,5 @@ function GS() {
   console.log(city);
 
   city = city.toLowerCase();
-
-  if(city == "tokyo") {
-
-    location.href = "tokyo.html";
-
-  }
-
-  else if(city == "paris") {
-
-    location.href = "paris.html";
-
-  }
-
-  else if(city == "roma") {
-
-    location.href = "roma.html";
-
-  }
 
 }

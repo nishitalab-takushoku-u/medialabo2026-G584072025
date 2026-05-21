@@ -17,6 +17,7 @@ let gakka = [
 //////////////// ここから下にプログラムを書きたそう!
 
 function show() {
+	
     let p = document.createElement('p');
     p.textContent = campus.address; 
     let h2Addr = document.querySelector('h2#addr');

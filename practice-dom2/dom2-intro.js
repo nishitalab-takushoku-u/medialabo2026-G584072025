@@ -31,3 +31,6 @@ l = document. createElement ('li');
 u. insertAdjacentElement('beforeend', l);
 l. textContent = '緑';
 }
+
+let b = document.querySelector('button#henkou');
+b.addEventListener('click', changeDom);

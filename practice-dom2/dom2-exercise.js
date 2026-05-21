@@ -18,29 +18,22 @@ let gakka = [
 
 function show() {
     let p = document.createElement('p');
-    p.textContent = '八王子市館町';
+    p.textContent = campus.address; 
     let h2Addr = document.querySelector('h2#addr');
     h2Addr.insertAdjacentElement('afterend', p);
 
-    let u = document.createElement('ul');
+    let u = document.createElement('ul'); 
     let h2Dept = document.querySelector('h2#dept');
-    h2Dept.insertAdjacentElement('afterend', u);
+    h2Dept.insertAdjacentElement('afterend', u); 
 
-    let l1 = document.createElement('li');
-    u.insertAdjacentElement('beforeend', l1);
-    l1.textContent = '机械システム工学科';
-
-    let l2 = document.createElement('li');
-    u.insertAdjacentElement('beforeend', l2);
-    l2.textContent = '電子システム工学科';
-
-    let l3 = document.createElement('li');
-    u.insertAdjacentElement('beforeend', l3);
-    l3.textContent = '情報工学科';
-
-    let l4 = document.createElement('li');
-    u.insertAdjacentElement('beforeend', l4);
-    l4.textContent = 'デザイン学科';
+    for (let deptName of gakka) {
+       
+        let l = document.createElement('li');
+        
+        l.textContent = deptName;
+        
+        u.insertAdjacentElement('beforeend', l);
+    }
 }
 
 let b = document.querySelector('button#show');

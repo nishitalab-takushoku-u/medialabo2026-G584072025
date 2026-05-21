@@ -19,6 +19,15 @@ function print(data) {
 function printDom(data) {
 let d = document. createElement('div');
 d. setAttribute('id', 'result') ;
+console.log("--- 検索結果 ---");
+  console.log("都市名: " + data.name);
+  console.log("緯度: " + data.coord.lat + ", 経度: " + data.coord.lon);
+  console.log("天气: " + data.weather[0].description);
+  console.log("最高気温: " + data.main.temp_max + "℃");
+  console.log("最低気温: " + data.main.temp_min + "℃");
+  console.log("湿度: " + data.main.humidity + "%");
+  console.log("風速: " + data.wind.speed + "m/s");
+  console.log("風向: " + data.wind.deg + "度");
 let b = document. querySelector('body');
 b. insertAdjacentElement( 'beforeend', d);
 }

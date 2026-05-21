@@ -16,26 +16,22 @@ let gakka = [
 
 //////////////// ここから下にプログラムを書きたそう!
 
-function show() {
-	
-    let p = document.createElement('p');
-    p.textContent = campus.address; 
-    let h2Addr = document.querySelector('h2#addr');
-    h2Addr.insertAdjacentElement('afterend', p);
-
-    let u = document.createElement('ul'); 
-    let h2Dept = document.querySelector('h2#dept');
-    h2Dept.insertAdjacentElement('afterend', u); 
-
-    for (let deptName of gakka) {
-       
-        let l = document.createElement('li');
-        
-        l.textContent = deptName;
-        
-        u.insertAdjacentElement('beforeend', l);
-    }
-}
-
 let b = document.querySelector('button#show');
-b.addEventListener('click', show);
+b.addEventListener('click',show)
+
+function show(){
+	let h1addr = document.querySelector('h2#addr');
+	let p = document.createElement('p');
+	p.textContent = campus.address;
+	h1addr.insertAdjacentElement('afterend',p);
+
+	let h2edpt = document.querySelector('#dept');
+	let ul = document.createElement('ul');
+	h2edpt.insertAdjacentElement('beforeend',ul);
+
+	for(let g of gakka){
+		let li = document.createElement('li');
+		li.textContent = g.name;
+		ul.insertAdjacentElement('beforeend',li);
+	}
+}

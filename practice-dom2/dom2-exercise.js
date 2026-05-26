@@ -20,6 +20,11 @@ let b = document.querySelector('button#show');
 b.addEventListener('click',show)
 
 function show(){
+	let oldResult = document.getElementById('result');
+    if (oldResult) {
+        oldResult.remove();
+    }
+
 	let h1addr = document.querySelector('h2#addr');
 	let p = document.createElement('p');
 	p.textContent = campus.address;

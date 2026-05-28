@@ -12,57 +12,43 @@ body {
     position: relative;
     overflow: hidden;         
     
-    /* 🛠️ 核心修改1：删掉原本黑紫色的 linear-gradient 遮罩 */
-    /* 改用非常柔和的纯白灰色淡雅背景，彻底告别紫色！ */
-    background: #f4f6f9;
+    /* 🛠️ 【第一层 & 第二层合体】 */
+    /* linear-gradient(rgba(0,0,0, 0.45)...) 就是你说的第二层：一个超级透明的黑色滤镜（45%透明度） */
+    /* url('world.png') 就是最底层的世界地图，它会透过上面的黑色滤镜显现出来，绝对不发白，也不发紫！ */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                url('worldmap.png') no-repeat center center;
+    background-size: cover; /* 如果想让地图完整显示不被裁剪，也可以改成 contain */
     
-    /* 把全局文字颜色改成深灰色，在白底上看得更清楚 */
-    color: #333;
+    color: #fff; /* 全局文字改回白色，在暗色滤镜下超级清晰 */
 }
 
-/* 🗺️ 你的专属本地世界地图层 */
-body::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    
-    /* 绑定你的 world.png */
-    background: url('worldmap.png') no-repeat center center;
-    background-size: contain;   
-    
-    /* 🛠️ 核心修改2：因为去掉了紫色遮罩，彩色地图会变亮。 */
-    /* 我们把不透明度降低到 0.15（15%），让它变成淡淡的、不刺眼的清爽背景 */
-    opacity: 0.15;              
-    
-    pointer-events: none;       
-    z-index: 1;                 
-}
+/* 删掉了原本多余的 body::before 伪元素图层，防止图层太多导致混乱 */
 
-
-/* 确保文字和面板浮在地图上方 */
+/* 确保所有内容老老实实呆在最表层 */
 h1, .search-box, #result {
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 /* 大标题样式 */
 h1 {
     font-size: 2.8rem;
     margin-bottom: 25px;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4); /* 给字加一点点阴影，高级感拉满 */
     letter-spacing: 3px;
     font-weight: 300;         
 }
 
-/* 搜索区域外壳（胶囊毛玻璃） */
+/* 搜索区域外壳（最表层的透明胶囊毛玻璃） */
 .search-box {
-    background: rgba(255, 255, 255, 0.08);  
-    backdrop-filter: blur(12px);            
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.12);  /* 淡淡的白透明 */
+    backdrop-filter: blur(15px);            /* 经典的毛玻璃朦胧感 */
+    -webkit-backdrop-filter: blur(15px);
     padding: 18px 28px;
     border-radius: 30px;                    
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -71,7 +57,7 @@ h1 {
 
 label {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* 输入框漂亮化 */
@@ -83,13 +69,13 @@ input#city {
     outline: none;
     width: 220px;
     transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     color: #fff;                             
 }
 
 input#city:focus {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 /* 按钮漂亮化 */
@@ -109,46 +95,17 @@ button#sou {
 button#sou:hover {
     background: #1485ff;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
 }
 
-button#sou:active {
-    transform: translateY(1px);
-}
-
-/* 📊 动态生成的天气结果卡片样式（毛玻璃） */
+/* 📊 动态生成的天气结果卡片（最表层的极简毛玻璃面板） */
 #result {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.08); /* 极低透明度，让底下的世界地图纹理完美透过来 */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 30px;
     border-radius: 20px;
     width: 340px;
     animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
-
-#result p {
-    margin: 14px 0;
-    font-size: 1.05rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-#result p:first-child {
-    justify-content: center;
-    color: #007aff;
-    font-weight: bold;
-    border-bottom: none;
-    margin-bottom: 15px;
-}
-
-/* 卡片淡入升起动画 */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }

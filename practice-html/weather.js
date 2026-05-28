@@ -10,7 +10,6 @@ function print(data) {
   console.log("湿度: " + data.main.humidity + "%");
   console.log("風速: " + data.wind.speed + "m/s");
   console.log("風向: " + data.wind.deg + "度");
-  
 }
 
 
@@ -54,7 +53,42 @@ function sendRequest() {
 	
 	let inputElement = document.querySelector('#city'); 
 	let cityId = inputElement.value; 
+  let userInput = inputElement.value.trim().toLowerCase(); 
 
+
+
+  let cityId = "";
+	if (userInput === "cairo" || userInput === "カイロ" || userInput === "开罗") {
+		cityId = "360630";
+	} else if (userInput === "moscow" || userInput === "モスクワ" || userInput === "莫斯科") {
+		cityId = "524901";
+	} else if (userInput === "johannesburg" || userInput === "ヨハネスブルク" || userInput === "约翰内斯堡") {
+		cityId = "993800";
+	} else if (userInput === "beijing" || userInput === "北京" || userInput === "ペキン") {
+		cityId = "1816670";
+	} else if (userInput === "tokyo" || userInput === "東京" || userInput === "东京") {
+		cityId = "1850147";
+	} else if (userInput === "singapore" || userInput === "シンガポール" || userInput === "新加坡") {
+		cityId = "1880252";
+	} else if (userInput === "sydney" || userInput === "シドニー" || userInput === "悉尼") {
+		cityId = "2147714";
+	} else if (userInput === "london" || userInput === "ロンドン" || userInput === "伦敦") {
+		cityId = "2643743";
+	} else if (userInput === "paris" || userInput === "パリ" || userInput === "巴黎") {
+		cityId = "2968815";
+	} else if (userInput === "rio de janeiro" || userInput === "リオデジャネイロ" || userInput === "里约热内卢") {
+		cityId = "3451189";
+	} else if (userInput === "new york" || userInput === "纽约" || userInput === "ニューヨーク") {
+		cityId = "5128581";
+	} else if (userInput === "los angeles" || userInput === "ロサンゼルス" || userInput === "洛杉矶") {
+		cityId = "5368361";
+	} else {
+
+		alert("指定された都市が見つかりません。\n（東京、ロンドン、ニューヨーク、北京、パリ などを入力してください）");
+		return;
+
+
+    
 	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + cityId + '.json';
 
 	axios.get(url)

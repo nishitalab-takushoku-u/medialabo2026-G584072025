@@ -67,7 +67,7 @@ function sendRequest() {
 		cityId = "1816670";
 	} else if (userInput === "tokyo" || userInput === "東京" || userInput === "东京") {
 		cityId = "1850147";
-    document.body.className = 'bg-tokyo';
+    resultBox.className = 'card-tokyo';
 	} else if (userInput === "singapore" || userInput === "シンガポール" || userInput === "新加坡") {
 		cityId = "1880252";
 	} else if (userInput === "sydney" || userInput === "シドニー" || userInput === "悉尼") {

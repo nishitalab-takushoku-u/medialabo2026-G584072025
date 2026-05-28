@@ -16,7 +16,7 @@ body {
     
     /* 🎨 双层背景：第一层纯黑超级透明滤镜（45%透明度）+ 第二层你的世界地图 */
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-                url('world.png') no-repeat center center;
+                url('worldmap.png') no-repeat center center;
     background-size: cover; /* 让地图铺满全屏 */
     background-attachment: fixed; /* 固定背景，防止滚动时地图跟着走 */
     

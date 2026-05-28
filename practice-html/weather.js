@@ -50,11 +50,10 @@ if (button) {
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 
 function sendRequest() {
-	let div = document.querySelector('#result');
+	
 	let inputElement = document.querySelector('#city'); 
   let userInput = inputElement.value.trim().toLowerCase(); 
-  let resultBox = document.querySelector('#result');
-
+  
   let cityId = "";
 
 	if (userInput === "cairo" || userInput === "カイロ" || userInput === "开罗") {
@@ -67,7 +66,6 @@ function sendRequest() {
 		cityId = "1816670";
 	} else if (userInput === "tokyo" || userInput === "東京" || userInput === "东京") {
 		cityId = "1850147";
-    resultBox.className = 'card-tokyo';
 	} else if (userInput === "singapore" || userInput === "シンガポール" || userInput === "新加坡") {
 		cityId = "1880252";
 	} else if (userInput === "sydney" || userInput === "シドニー" || userInput === "悉尼") {

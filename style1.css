@@ -110,15 +110,3 @@ button#sou:hover {
     border-bottom: none;
     margin-bottom: 15px;
 }
-
-
-#result.card-tokyo {
-    
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('tokyo.png') no-repeat center center;
-    background-size: cover; 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-}

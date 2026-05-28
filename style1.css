@@ -111,3 +111,10 @@ button#sou:hover {
     border-bottom: none;
     margin-bottom: 15px;
 }
+
+body.bg-tokyo {
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                url('tokyo.png') no-repeat center center;
+    background-size: cover;          
+    background-attachment: fixed;  
+}

@@ -50,7 +50,7 @@ if (button) {
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 
 function sendRequest() {
-	
+	let div = document.querySelector('#result');
 	let inputElement = document.querySelector('#city'); 
   let userInput = inputElement.value.trim().toLowerCase(); 
   let resultBox = document.querySelector('#result');

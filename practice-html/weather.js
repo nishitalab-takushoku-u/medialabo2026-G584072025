@@ -52,7 +52,6 @@ if (button) {
 function sendRequest() {
 	
 	let inputElement = document.querySelector('#city'); 
-	let cityId = inputElement.value; 
   let userInput = inputElement.value.trim().toLowerCase(); 
 
 

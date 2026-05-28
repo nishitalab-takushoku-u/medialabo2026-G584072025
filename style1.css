@@ -1,27 +1,151 @@
+/* 全局无缝重置 */
 body {
     margin: 0;
     padding: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;   
     justify-content: center;  
     align-items: center;      
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;         
     
-    
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('你的图片路径.jpg');
-    background-size: cover;     
-    background-position: center;
-    background-repeat: no-repeat;
+    /* 深蓝色高级夜空遮罩 + 唯美背景底图组合 */
+    background: linear-gradient(rgba(22, 31, 54, 0.88), rgba(22, 31, 54, 0.88)), 
+                url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
+    color: #fff;
 }
 
-
-.container {
-    text-align: center;
+/* 🗺️ 你的专属本地世界地图层 */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    
+    /* 🛠️ 已完美绑定你本地的 world.png */
+    background: url('world.png') no-repeat center center;
+    background-size: contain;   /* 完整显示整张地图，不被裁剪 */
+    
+    /* 🎨 透明度：25% 的高雅暗纹，如果觉得淡可以调大到 0.4，觉得深可以调小到 0.15 */
+    opacity: 0.25;              
+    
+    pointer-events: none;       
+    z-index: 1;                 
 }
 
+/* 确保文字和面板浮在地图上方 */
+h1, .search-box, #result {
+    position: relative;
+    z-index: 2;
+}
 
-input, button {
-    padding: 8px 12px;
-    font-size: 16px;
-    margin: 5px;
+/* 大标题样式 */
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    letter-spacing: 3px;
+    font-weight: 300;         
+}
+
+/* 搜索区域外壳（胶囊毛玻璃） */
+.search-box {
+    background: rgba(255, 255, 255, 0.08);  
+    backdrop-filter: blur(12px);            
+    -webkit-backdrop-filter: blur(12px);
+    padding: 18px 28px;
+    border-radius: 30px;                    
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 输入框漂亮化 */
+input#city {
+    padding: 10px 18px;
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    outline: none;
+    width: 220px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;                             
+}
+
+input#city:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+/* 按钮漂亮化 */
+button#sou {
+    padding: 10px 24px;
+    font-size: 15px;
+    background: #007aff;                     
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+}
+
+button#sou:hover {
+    background: #1485ff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+}
+
+button#sou:active {
+    transform: translateY(1px);
+}
+
+/* 📊 动态生成的天气结果卡片样式（毛玻璃） */
+#result {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    width: 340px;
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+#result p {
+    margin: 14px 0;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#result p:first-child {
+    justify-content: center;
+    color: #007aff;
+    font-weight: bold;
+    border-bottom: none;
+    margin-bottom: 15px;
+}
+
+/* 卡片淡入升起动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }

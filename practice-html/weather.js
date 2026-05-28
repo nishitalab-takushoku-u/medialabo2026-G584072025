@@ -56,8 +56,8 @@ function sendRequest() {
   let userInput = inputElement.value.trim().toLowerCase(); 
 
 
-
   let cityId = "";
+
 	if (userInput === "cairo" || userInput === "カイロ" || userInput === "开罗") {
 		cityId = "360630";
 	} else if (userInput === "moscow" || userInput === "モスクワ" || userInput === "莫斯科") {
@@ -83,10 +83,10 @@ function sendRequest() {
 	} else if (userInput === "los angeles" || userInput === "ロサンゼルス" || userInput === "洛杉矶") {
 		cityId = "5368361";
 	} else {
+		alert("指定された都市が見つかりません。\n（東京、ロンドン、ニューヨーク などを入力してください）");
+		return; 
+	}
 
-		alert("指定された都市が見つかりません。\n（東京、ロンドン、ニューヨーク、北京、パリ などを入力してください）");
-		return;
-  }
 
     
 	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + cityId + '.json';

@@ -42,30 +42,38 @@ function printDom(data) {
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
-let button = document.querySelector('#sou'); // 👈 这里的 '#search-btn' 换成你 HTML 里按钮的 id 或 class
+let button = document.querySelector('#sou'); 
 if (button) {
     button.addEventListener('click', sendRequest);
 }
 
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
+
 function sendRequest() {
-    let inputElement = document.querySelector('#city'); 
-    let cityName = inputElement ? inputElement.value : "";
+	
+	let inputElement = document.querySelector('#city'); 
+	let cityId = inputElement.value; 
 
-    if (!cityName) {
-        alert('请输入要搜索的城市！');
-        return;
-    }
+	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + cityId + '.json';
 
-    
-    let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/{id}.json' + cityName; 
-
+	axios.get(url)
+		.then(showResult)
+		.catch(showError)
+		.then(finish);
 }
+
+
+
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
-    printDom(resp);
+    
+    let data = resp.data;
+    if (typeof data === 'string') {
+		data = JSON.parse(data);
+	}
+  printDom(data);
 }
 
 

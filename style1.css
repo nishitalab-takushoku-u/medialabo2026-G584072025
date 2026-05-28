@@ -5,12 +5,27 @@ body {
     min-height: 100vh;
     padding-top: 80px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-                url('worldmap.png') no-repeat center center;
-    background-size: cover; 
-    background-attachment: fixed;
-    color: #fff;
+    background-color: #000; 
+    color: #fff; 
 }
+
+img#bg-map {
+    position: fixed;   
+    top: 0;
+    left: 0;
+    width: 100vw;     
+    height: 100vh;     
+    object-fit: cover;
+    filter: brightness(0.55); 
+    z-index: -1;       
+}
+
+
+h1, .search-box, #result {
+    position: relative;
+    z-index: 10; 
+}
+
 
 h1 {
     font-size: 2.8rem;

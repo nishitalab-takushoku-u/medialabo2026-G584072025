@@ -86,7 +86,7 @@ function sendRequest() {
 
 		alert("指定された都市が見つかりません。\n（東京、ロンドン、ニューヨーク、北京、パリ などを入力してください）");
 		return;
-
+  }
 
     
 	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + cityId + '.json';

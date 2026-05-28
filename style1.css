@@ -1,66 +1,42 @@
-/* 全局无缝重置 */
+
 body {
     margin: 0;
     padding: 0;
-    
-    /* 🛠️ 放弃 Flex，改用传统的文字居中 */
     text-align: center; 
-    
-    /* 让整个网页至少有一个屏幕的高度，方便把背景撑开 */
     min-height: 100vh;
-    
-    /* 网页主体的内边距：给网页顶部留出 80 像素的空隙，不让大标题顶着屏幕边缘 */
     padding-top: 80px;
-    
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    
-    /* 🎨 双层背景：第一层纯黑超级透明滤镜（45%透明度）+ 第二层你的世界地图 */
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
                 url('worldmap.png') no-repeat center center;
-    background-size: cover; /* 让地图铺满全屏 */
-    background-attachment: fixed; /* 固定背景，防止滚动时地图跟着走 */
-    
-    color: #fff; /* 全局文字改为白色，在暗色背景下非常清晰 */
+    background-size: cover; 
+    background-attachment: fixed;
+    color: #fff;
 }
 
-/* 大标题样式 */
 h1 {
     font-size: 2.8rem;
     margin-top: 0;
-    margin-bottom: 30px; /* 和下面的搜索框保持 30 像素距离 */
+    margin-bottom: 30px; 
     color: #fff;
-    
-    /* ✅ 教过的阴影：给字加一点黑色阴影，防止背景太花看不清字 */
     text-shadow: 0 4px 15px rgba(0,0,0,0.5); 
-    
     letter-spacing: 3px;
     font-weight: 300;         
 }
 
-/* 搜索区域外壳（最表层的透明胶囊毛玻璃） */
 .search-box {
-    background: rgba(255, 255, 255, 0.12);  /* 淡淡的白透明（12%不透明度） */
-    
-    /* ✅ 传统的块级元素居中法（老师绝对教过）：上下 0，左右自动靠齐，宽度固定 */
+    background: rgba(255, 255, 255, 0.12);  
     margin: 0 auto 40px auto; 
-    width: 560px; /* 给搜索框一个合理的固定宽度 */
+    width: 560px; 
     
     padding: 15px 25px;                     
     border-radius: 30px;                    
     border: 1px solid rgba(255, 255, 255, 0.18); 
-    
-    /* ✅ 教过的模糊：让外壳背后的地图产生朦胧的毛玻璃效果 */
     backdrop-filter: blur(15px);            
     -webkit-backdrop-filter: blur(15px);
-    
-    /* ✅ 教过的阴影：给盒子加一圈柔和的阴影 */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); 
-    
-    /* 内部标签、输入框稍微拉开一点间距 */
     word-spacing: 5px; 
 }
 
-/* 让搜索框内部的元素在垂直方向上对齐线对齐，看起来更整齐 */
 .search-box label, .search-box input, .search-box button {
     vertical-align: middle;
 }
@@ -71,7 +47,6 @@ label {
     margin-right: 8px;
 }
 
-/* 输入框漂亮化 */
 input#city {
     padding: 10px 18px;          
     font-size: 15px;             
@@ -79,71 +54,56 @@ input#city {
     border-radius: 20px;         
     background: rgba(255, 255, 255, 0.15); 
     color: #fff;                 
-    outline: none; /* 点输入框时，去掉浏览器自带的黑色粗边框 */
+    outline: none;
     width: 200px;
     margin-right: 8px;
-    /* ❌ 已经彻底删掉了 transition 动画 */
+    
 }
 
-/* 鼠标点进去打字时 */
 input#city:focus {
-    background: rgba(255, 255, 255, 0.25); /* 输入框稍微变亮 */
-    box-shadow: 0 0 12px rgba(255,255,255,0.3); /* 外圈发淡淡的白光 */
+    background: rgba(255, 255, 255, 0.25); 
+    box-shadow: 0 0 12px rgba(255,255,255,0.3); 
 }
 
-/* 按钮漂亮化 */
+
 button#sou {
     padding: 10px 24px;          
     font-size: 15px;             
-    background: #007aff; /* 苹果经典科技蓝 */        
+    background: #007aff;
     color: white;                
     border: none;                
     border-radius: 20px;         
-    cursor: pointer; /* 鼠标移上去变成小手 */            
     font-weight: 600;            
     box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
-    /* ❌ 已经彻底删掉了 transition 动画 */
+   
 }
 
-/* 鼠标悬停在按钮上时 */
+
 button#sou:hover {
-    background: #1485ff; /* 蓝色稍微变浅，给用户点击反馈 */
-    /* ❌ 已经彻底删掉了 transform 网页飘起动画 */
+    background: #1485ff; 
 }
 
-/* 📊 动态生成的天气结果卡片（最表层的极简毛玻璃面板） */
 #result {
     background: rgba(255, 255, 255, 0.08); 
-    
-    /* ✅ 传统的块级元素居中法：左右 auto */
     margin: 0 auto; 
-    width: 340px; /* 固定卡片宽度 */
-    
+    width: 340px;
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    
-    /* ✅ 教过的模糊与阴影 */
     backdrop-filter: blur(20px);            
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-    
-    /* ❌ 已经彻底删掉了 animation 淡入升起动画，现在它会直接稳重、诚实地刷新出来 */
 }
 
-/* 结果框内部的每一行文字排版 */
 #result p {
     margin: 14px 0;
     font-size: 1.05rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08); /* 淡淡的底部分割线 */
+    border-bottom: 1px solid rgba(255,255,255,0.08); 
     padding-bottom: 8px;
-    
-    /* 传统排版：文字靠左，气温数值靠右 */
     text-align: left; 
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* 让第一行 “--- 検索結果 ---” 样式特殊一点：文字居中 */
 #result p:first-child {
     text-align: center;
     color: #007aff;

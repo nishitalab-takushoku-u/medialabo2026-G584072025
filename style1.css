@@ -12,11 +12,12 @@ body {
     position: relative;
     overflow: hidden;         
     
-    /* 深蓝色高级夜空遮罩 + 唯美背景底图组合 */
-    background: linear-gradient(rgba(22, 31, 54, 0.88), rgba(22, 31, 54, 0.88)), 
-                url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop') no-repeat center center;
-    background-size: cover;
-    color: #fff;
+    /* 🛠️ 核心修改1：删掉原本黑紫色的 linear-gradient 遮罩 */
+    /* 改用非常柔和的纯白灰色淡雅背景，彻底告别紫色！ */
+    background: #f4f6f9;
+    
+    /* 把全局文字颜色改成深灰色，在白底上看得更清楚 */
+    color: #333;
 }
 
 /* 🗺️ 你的专属本地世界地图层 */
@@ -25,16 +26,18 @@ body::before {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     
-    /* 🛠️ 已完美绑定你本地的 world.png */
+    /* 绑定你的 world.png */
     background: url('worldmap.png') no-repeat center center;
-    background-size: contain;   /* 完整显示整张地图，不被裁剪 */
+    background-size: contain;   
     
-    /* 🎨 透明度：25% 的高雅暗纹，如果觉得淡可以调大到 0.4，觉得深可以调小到 0.15 */
-    opacity: 0.25;              
+    /* 🛠️ 核心修改2：因为去掉了紫色遮罩，彩色地图会变亮。 */
+    /* 我们把不透明度降低到 0.15（15%），让它变成淡淡的、不刺眼的清爽背景 */
+    opacity: 0.15;              
     
     pointer-events: none;       
     z-index: 1;                 
 }
+
 
 /* 确保文字和面板浮在地图上方 */
 h1, .search-box, #result {

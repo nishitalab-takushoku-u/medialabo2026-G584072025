@@ -112,9 +112,14 @@ button#sou:hover {
     margin-bottom: 15px;
 }
 
-body.bg-tokyo {
-    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+
+#result.card-tokyo {
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('tokyo.png') no-repeat center center;
-    background-size: cover;          
-    background-attachment: fixed;  
+    background-size: cover; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }

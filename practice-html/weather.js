@@ -53,7 +53,7 @@ function sendRequest() {
 	
 	let inputElement = document.querySelector('#city'); 
   let userInput = inputElement.value.trim().toLowerCase(); 
-
+  let resultBox = document.querySelector('#result');
 
   let cityId = "";
 

@@ -55,7 +55,7 @@ function sendRequest() {
 	let inputElement = document.querySelector('#city'); 
 	let cityId = inputElement.value; 
 
-	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + cityId + '.json';
+	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/2643743.json';
 
 	axios.get(url)
 		.then(showResult)
